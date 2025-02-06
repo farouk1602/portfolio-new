@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <header class="header">
+      <nav>
+        <div class="nav__bar">
+          <div class="nav__header">
+            <div class="nav__logo">
+                <a href="#"><div class="image"><img src="image/logo.webp" alt=""></div></a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+              <span><i class="ri-menu-line"></i></span>
+            </div>
+          </div>
+          <ul class="nav__links" id="nav-links">
+            <li class="link"><a href="index.html">résumé</a></li>
+            <li class="link"><a href="expérience.html" style="color: rgb(226, 61, 226)">expérience</a></li>
+            <li class="link"><a href="formation.html">formation</a></li>
+            <li class="link"><a href="compaitences.html">compétences</a></li>
+            <li class="link"><a href="langues.html">langues</a></li>
+            <li class="link"><a href="centre_d'interet.html">centre d'interet</a></li>
+            <li class="link"><a href="divers.html">divers</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    
+    <section class="section__container">
+      <h2 class="section_title">experience</h2>
+      <div class="exp">
+        <div class="experience__image">
+          <img src="image/Projections-rafiki.svg">
+        </div>
+        <div class="experience__content">
+          <h2>réalisation de projet de fin détude licence recherche opérationelle</h2>
+          <h4>
+            une méthode donne une solution optimale pour un probléme d'affectation des agents a des entreprises "écoles,hopitaux..." avec des liste de préférances pour les agents et les entreprises .
+          </h4>
+        </div>
+      </div>
+      
+</section>
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const navLinks = document.getElementById("nav-links");
+  const menuBtnIcon = menuBtn.querySelector("i");
+
+  menuBtn.addEventListener("click", (e) => {
+    navLinks.classList.toggle("open");
+
+    const isOpen = navLinks.classList.contains("open");
+    menuBtnIcon.setAttribute(
+      "class",
+      isOpen ? "ri-close-line" : "ri-menu-line"
+    );
+  });
+
+  navLinks.addEventListener("click", (e) => {
+    navLinks.classList.remove("open");
+    menuBtnIcon.setAttribute("class", "ri-menu-line");
+  });
+
+
+  let slides = document.querySelectorAll('.screen-box');
+  let index = 0;
+
+  function next(){
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+  }
+
+  function back(){
+      slides[index].classList.remove('active');
+      index = (index - 1 + slides.length) % slides.length;
+      slides[index].classList.add('active');
+  }
+
+</script>
+</body>
+</html>

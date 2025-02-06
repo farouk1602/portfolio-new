@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+</head>
+<body>
+    <header class="header">
+      <nav>
+        <div class="nav__bar">
+          <div class="nav__header">
+            <div class="nav__logo">
+                <a href="#"><div class="image"><img src="image/logo.webp" alt=""></div></a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+              <span><i class="ri-menu-line"></i></span>
+            </div>
+          </div>
+          <ul class="nav__links" id="nav-links">
+            <li class="link"><a href="index.html">résumé</a></li>
+            <li class="link"><a href="expérience.html">expérience</a></li>
+            <li class="link"><a href="formation.html" style="color: rgb(226, 61, 226)">formation</a></li>
+            <li class="link"><a href="compaitences.html">compétences</a></li>
+            <li class="link"><a href="langues.html">langues</a></li>
+            <li class="link"><a href="centre_d'interet.html">centre d'interet</a></li>
+            <li class="link"><a href="divers.html">divers</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section class="section__container formation__container">
+        <h2 class="section_title">formation</h2>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020</div>
+                <div class="timeline-content">
+                    <h3>bachaloriat scientifique <span>moyenne : 15.22</span></h3>
+                    <p>Ce résultat reflète mon engagement continu dans mes études et ma passion. </p>
+                </div>
+                </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2020-2021</div>
+                <div class="timeline-content">
+                    <h3><img src="image/logo.webp" alt="">l1 MI <span>USTHB</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2021-2022 </div>
+                <div class="timeline-content">
+                    <h3><img src="image/logo.webp" alt="">l2 recherche opérationelle <span>USTHB</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2022-2023</div>
+                <div class="timeline-content">
+                    <h3><img src="image/logo.webp" alt="">l3 recherche opérationelle <span>USTHB</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2023-2024 </div>
+                <div class="timeline-content">
+                    <h3><img src="image/logo.webp" alt="">m1 big data analytics <span>USTHB</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+<script>
+    const menuBtn = document.getElementById("menu-btn");
+    const navLinks = document.getElementById("nav-links");
+    const menuBtnIcon = menuBtn.querySelector("i");
+
+    menuBtn.addEventListener("click", (e) => {
+        navLinks.classList.toggle("open");
+
+        const isOpen = navLinks.classList.contains("open");
+        menuBtnIcon.setAttribute(
+        "class",
+        isOpen ? "ri-close-line" : "ri-menu-line"
+        );
+    });
+
+    navLinks.addEventListener("click", (e) => {
+        navLinks.classList.remove("open");
+        menuBtnIcon.setAttribute("class", "ri-menu-line");
+    });
+
+
+    let slides = document.querySelectorAll('.screen-box');
+    let index = 0;
+
+    function next(){
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+    }
+
+    function back(){
+        slides[index].classList.remove('active');
+        index = (index - 1 + slides.length) % slides.length;
+        slides[index].classList.add('active');
+    }
+
+</script>
+</body>
+</html>
